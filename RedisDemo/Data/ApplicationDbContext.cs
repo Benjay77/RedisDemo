@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RedisDemo.Models;
 
 namespace RedisDemo.Data
 {
@@ -12,5 +13,6 @@ namespace RedisDemo.Data
             : base(options)
         {
         }
+        public DbSet<Product> Products { get; set; }
     }
 }

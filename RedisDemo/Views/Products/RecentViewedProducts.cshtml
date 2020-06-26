@@ -1,0 +1,18 @@
+﻿@model StackExchange.Redis.RedisValue[]
+
+
+@{
+    ViewData["Title"] = "RecentViewedProducts";
+}
+
+<h1>RecentViewedProducts</h1>
+
+
+<div>
+    <ul class=" list-group">
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">@item</li>
+    }
+    </ul>
+</div>
