@@ -37,6 +37,12 @@ namespace RedisDemo
             services.AddRazorPages();
 
             services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
+
+            services.AddDistributedRedisCache(options => 
+            {
+                options.InstanceName = "RedisDemoInstance";
+                options.Configuration = "localhost";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
