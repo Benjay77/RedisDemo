@@ -66,7 +66,7 @@ namespace RedisDemo.Controllers
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int id)
         {
-            Product product = await _applicationDbContext.Products.FirstAsync(x => x.Id == id);
+            Product product = await _applicationDbContext.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (product!=null)
             {
                 await _db.StringIncrementAsync($"Product:{product.Id}:Views");

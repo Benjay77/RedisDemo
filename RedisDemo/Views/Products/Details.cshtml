@@ -1,4 +1,4 @@
-﻿@model RedisDemo.ViewModels.ProductViewModel
+﻿@model RedisDemo.Models.Product
 
 @{
     ViewData["Title"] = "Details";
@@ -31,6 +31,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", Model.Id) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     <a asp-action="Index">Back to List</a>
 </div>
